@@ -1,0 +1,47 @@
+﻿<Window x:Class="Kek.WindowSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kek"
+        mc:Ignorable="d"
+        MinHeight="400" MinWidth="400"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        Title="WindowSettings" Height="400" Width="400">
+    <Window.Resources>
+        <!--стиль лабеля-->
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+        <Style TargetType="ScrollViewer">
+            <Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+        </Style>
+        <!--стиль кнопок-->
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="145"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <!--центровка-->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!--путь к папке-->
+            <ScrollViewer>
+                <Label x:Name="lblFolder" Content="Папка колекции: "/>
+            </ScrollViewer>
+            <Button x:Name="btnOpenFolder" Content="Открыть папку" Click="btnOpenFolder_Click"/>
+                
+            <!--Песня-->
+            <ScrollViewer>
+                <Label x:Name="lblSong" Content="Песня: " />
+            </ScrollViewer>
+            <Button x:Name="btnOpenSong" Content="Открыть песню" Click="btnOpenSong_Click" />
+            <Button x:Name="btnTest" Content="Протестировать" Click="btnTest_Click" />
+            <Button x:Name="btnDone" Content="Готово" Click="btnDone_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
